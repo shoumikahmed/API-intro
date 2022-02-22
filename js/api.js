@@ -11,9 +11,24 @@ function loadUsers() {
         .then(data => displayUsers(data))
 }
 
-function displayUsers(data) {
-    console.log(data)
+// function displayUsers(users) {
+//     const ul = document.getElementById('users')
+//     for (const user of users) {
+//         const li = document.createElement('li')
+//         li.innerText = user.name
+//         ul.appendChild(li)
+//     }
+// }
+
+function displayUsers(users) {
+    const ul = document.getElementById('users')
+    for (const user of users) {
+        const li = document.createElement('li')
+        li.innerText = `name: ${user.name}, email: ${user.email}`
+        ul.appendChild(li)
+    }
 }
+
 
 function loadPosts() {
     fetch('https://jsonplaceholder.typicode.com/posts')
